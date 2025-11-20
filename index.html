@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gowri Priya | Data & AI Engineer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #1f2933;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1f5fbf;
+    }
+
+    header {
+      background: linear-gradient(135deg, #e8f1ff, #ffffff);
+      border-bottom: 1px solid #e0e7ff;
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .nav-left {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #123057;
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #102a43;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #52606d;
+      margin-bottom: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      background: #e0ecff;
+      color: #1f5fbf;
+      font-weight: 600;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: #1f5fbf;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid #d0d7e2;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: #1f5fbf;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      font-size: 0.9rem;
+      color: #6b7b8f;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: 0 12px 25px rgba(15, 35, 95, 0.07);
+      border: 1px solid #e1e7f5;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #123057;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-item {
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .hero-card-label {
+      color: #7b8794;
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0353a4;
+    }
+
+    h2.section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #102a43;
+      margin: 32px 0 12px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #7b8794;
+      margin-bottom: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px 18px;
+      border: 1px solid #dde5f3;
+      box-shadow: 0 6px 12px rgba(15, 35, 95, 0.03);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #123057;
+      margin-bottom: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.78rem;
+    }
+
+    .pill {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #edf2ff;
+      color: #364fc7;
+      font-weight: 600;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 12px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px 18px;
+      border: 1px solid #dde5f3;
+      box-shadow: 0 8px 18px rgba(15, 35, 95, 0.05);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #123057;
+      margin-bottom: 4px;
+    }
+
+    .project-tagline {
+      font-size: 0.86rem;
+      color: #7b8794;
+      margin-bottom: 8px;
+    }
+
+    .project-body {
+      font-size: 0.86rem;
+      color: #4a5568;
+      margin-bottom: 10px;
+    }
+
+    .project-footer {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .about {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid #dde5f3;
+      box-shadow: 0 8px 18px rgba(15, 35, 95, 0.04);
+      font-size: 0.94rem;
+      color: #4a5568;
+    }
+
+    .contact-list {
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .contact-list div {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      padding: 18px 16px 30px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #9fb3c8;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">Gowri Priya · Data & AI Engineer</div>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Hi, I’m Gowri Priya.</h1>
+        <p class="hero-subtitle">
+          Data Engineer with a growing focus on <strong>AI & Machine Learning</strong>, building
+          cloud-native data pipelines and intelligent analytics solutions with
+          <strong>Azure, Databricks, PySpark, SQL, and Python</strong>.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Data Engineering</span>
+          <span class="tag">Azure · Databricks · PySpark</span>
+          <span class="tag">AI & ML Pipelines</span>
+          <span class="tag">LLMs · RAG · Embeddings</span>
+        </div>
+
+        <div class="hero-buttons">
+          <!-- replace # with your resume link -->
+          <a href="#" class="btn-primary">Download Resume</a>
+          <a href="#projects" class="btn-secondary">View Projects</a>
+        </div>
+
+        <p class="hero-meta">
+          📍 Eden Prairie, MN · Open to relocation · OPT/STEM eligible<br />
+          💡 Interests: Cloud data platforms, real-time analytics, AI-driven document workflows, and
+          ML in production.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">Quick Profile</div>
+        <div class="hero-card-item">
+          <span class="hero-card-label">Primary stack</span>
+          <span>Azure · Databricks · PySpark · SQL · Python</span>
+        </div>
+        <div class="hero-card-item">
+          <span class="hero-card-label">AI/ML</span>
+          <span>Scikit-learn · TensorFlow · LangChain · LLMs</span>
+        </div>
+        <div class="hero-card-item">
+          <span class="hero-card-label">Focus areas</span>
+          <span>ETL/ELT · Data Modeling · ML pipelines</span>
+        </div>
+        <div class="hero-card-item">
+          <span class="hero-card-label">Current goal</span>
+          <span class="chip">Full-time Data / ML Engineer role in USA</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">
+        Core technologies I use across data engineering, analytics, and applied machine learning.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="card-title">Data Engineering</h3>
+          <p>Designing and building batch and streaming data pipelines.</p>
+          <div class="pill-row">
+            <span class="pill">PySpark</span>
+            <span class="pill">Spark SQL</span>
+            <span class="pill">ETL/ELT</span>
+            <span class="pill">Data Modeling</span>
+            <span class="pill">Delta Lake</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Cloud & Warehousing</h3>
+          <p>Cloud-native data solutions and analytics platforms.</p>
+          <div class="pill-row">
+            <span class="pill">Azure Data Lake</span>
+            <span class="pill">Databricks</span>
+            <span class="pill">Azure Data Factory</span>
+            <span class="pill">Snowflake</span>
+            <span class="pill">BigQuery</span>
+            <span class="pill">Synapse</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">AI & Machine Learning</h3>
+          <p>End-to-end ML workflows and integrating AI into data pipelines.</p>
+          <div class="pill-row">
+            <span class="pill">Scikit-learn</span>
+            <span class="pill">TensorFlow</span>
+            <span class="pill">MLflow</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">LLMs · RAG</span>
+            <span class="pill">AI Document Processing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">
+        Realistic end-to-end projects across data engineering, AI, and ML. I’m actively building and
+        expanding these repositories.
+      </p>
+
+      <div class="projects-grid">
+        <!-- Data Engineering project -->
+        <article class="project-card">
+          <h3 class="project-title">Azure ETL Pipeline for Sales Analytics</h3>
+          <p class="project-tagline">Azure Data Factory · Databricks · Delta Lake · Synapse</p>
+          <p class="project-body">
+            End-to-end pipeline that ingests raw sales data into Azure Data Lake, transforms it with
+            PySpark in Databricks, applies data-quality checks, and loads curated Delta tables for
+            analytics in Synapse using a star schema.
+          </p>
+          <div class="project-footer">
+            <span>Batch ETL · Star schema · CI-friendly</span>
+            <!-- replace # with GitHub repo link -->
+            <a href="#" target="_blank">View on GitHub →</a>
+          </div>
+        </article>
+
+        <!-- Streaming project -->
+        <article class="project-card">
+          <h3 class="project-title">Real-Time Ecommerce Events with Kafka</h3>
+          <p class="project-tagline">Kafka · Spark Structured Streaming · PostgreSQL</p>
+          <p class="project-body">
+            Streaming pipeline that captures ecommerce events in Kafka, processes them with Spark
+            Structured Streaming, and delivers live aggregates into PostgreSQL for dashboards and
+            alerts, using windowed aggregations and watermarking.
+          </p>
+          <div class="project-footer">
+            <span>Low-latency · Windowed aggregates</span>
+            <a href="#" target="_blank">View on GitHub →</a>
+          </div>
+        </article>
+
+        <!-- AI/ML project -->
+        <article class="project-card">
+          <h3 class="project-title">AI Document Intelligence for Invoices</h3>
+          <p class="project-tagline">Python · LangChain · OCR · LLM · Vector DB</p>
+          <p class="project-body">
+            AI-powered document pipeline that extracts key fields from invoices using OCR and LLM
+            prompts, stores embeddings in a vector database, and exposes a question-answering
+            interface for finance teams to query invoice data conversationally.
+          </p>
+          <div class="project-footer">
+            <span>RAG · Embeddings · AI Docs</span>
+            <a href="#" target="_blank">View on GitHub →</a>
+          </div>
+        </article>
+
+        <!-- ML project -->
+        <article class="project-card">
+          <h3 class="project-title">Customer Churn Prediction Pipeline</h3>
+          <p class="project-tagline">Python · Scikit-learn · MLflow · Feature Engineering</p>
+          <p class="project-body">
+            ML pipeline that predicts customer churn from transactional data with feature
+            engineering, model training, hyper-parameter tuning, and experiment tracking using
+            MLflow, designed to plug into an existing data lake.
+          </p>
+          <div class="project-footer">
+            <span>ML lifecycle · Production-ready</span>
+            <a href="#" target="_blank">View on GitHub →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about">
+        <p>
+          I am a Data Engineer with a strong interest in <strong>AI and Machine Learning</strong>.
+          I enjoy working with <strong>Azure, Databricks, PySpark, SQL, and Python</strong> to turn
+          raw data into trustworthy analytics assets and intelligent applications.
+        </p>
+        <br />
+        <p>
+          My focus is building reliable ETL/ELT pipelines, streaming data flows, and data models
+          that power reporting, dashboards, and ML systems. On the AI side, I am especially
+          interested in <strong>LLM-based systems, AI document processing, and RAG pipelines</strong>
+          that sit on top of modern data stacks.
+        </p>
+        <br />
+        <p>
+          I am currently looking for a <strong>full-time role in the USA</strong> where I can grow
+          as a Data & AI Engineer, contribute to cloud data platforms, and collaborate with product,
+          analytics, and ML teams.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        The best way to reach me is email or LinkedIn. I’m open to data engineering, analytics
+        engineering, and AI/ML engineering opportunities.
+      </p>
+
+      <div class="contact-list">
+        <!-- change these placeholders to your real info -->
+        <div>📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a></div>
+        <div>💼 LinkedIn: <a href="#" target="_blank">linkedin.com/in/your-profile</a></div>
+        <div>💻 GitHub: <a href="https://github.com/gowripriya7872" target="_blank">github.com/gowripriya7872</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Gowri Priya · Data & AI Engineer · Built with HTML &amp; CSS
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
